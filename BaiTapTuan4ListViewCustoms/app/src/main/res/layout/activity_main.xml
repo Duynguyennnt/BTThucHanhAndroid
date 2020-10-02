@@ -7,9 +7,9 @@
     tools:context=".MainActivity">
 
     <ListView
-        android:id="@+id/listViewId"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/listviewsv"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="1dp" />

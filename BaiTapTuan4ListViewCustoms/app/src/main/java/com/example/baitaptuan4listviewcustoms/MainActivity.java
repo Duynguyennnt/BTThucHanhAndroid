@@ -9,24 +9,29 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ListView listbacsic;
-    ArrayList<String> arraybasic;
+    ListView lvsinhvien;
+    ArrayList<sinhVien> arraySinhVien;
+    sinhVienAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        listbacsic =(ListView) findViewById(R.id.listViewId);
-        arraybasic = new ArrayList<>();
-        arraybasic.add("hello");
-        arraybasic.add("hello");
-        arraybasic.add("hello");
-        arraybasic.add("hello");
-        arraybasic.add("hello");
-        arraybasic.add("hello");
-        arraybasic.add("hello");
-        arraybasic.add("hello");
-        arraybasic.add("hello");
-        ArrayAdapter ap = new ArrayAdapter(MainActivity.this, android.R.layout.simple_list_item_1, arraybasic);
-        listbacsic.setAdapter(ap);
+        anhXa();
+        adapter = new sinhVienAdapter(this,R.layout.row_sinhvien, arraySinhVien);
+        lvsinhvien.setAdapter(adapter);
+    }
+    private void anhXa(){
+        lvsinhvien = (ListView) findViewById(R.id.listviewsv);
+        arraySinhVien = new ArrayList<>();
+        arraySinhVien.add(new sinhVien("Nguyễn Thanh Duy","1811505310411","18T4",R.drawable.chandung1));
+        arraySinhVien.add(new sinhVien("Nguyễn Hoàng Lãnh","1811505310410","18T4",R.drawable.chandung2));
+        arraySinhVien.add(new sinhVien("Trương Minh Đạt","1811505310421","18T4",R.drawable.chandung3));
+        arraySinhVien.add(new sinhVien("Võ Nguyễn Hoàng Minh","1811505310414","18T4",R.drawable.chandung4));
+        arraySinhVien.add(new sinhVien("Võ Nữ Oanh","1811505310415","18T4",R.drawable.chandung5));
+        arraySinhVien.add(new sinhVien("Cò Thị Bé","1811505310416","18T4",R.drawable.chandung6));
+        arraySinhVien.add(new sinhVien("Tôn Nữ Trà Ngư","1811505310417","18T4",R.drawable.chandung7));
+        arraySinhVien.add(new sinhVien("Bùi Công Đức","1811505310418","18T4",R.drawable.chandung8));
+        arraySinhVien.add(new sinhVien("Trần Thị Như Ý","1811505310419","18T4",R.drawable.chandung9));
+
     }
 }
