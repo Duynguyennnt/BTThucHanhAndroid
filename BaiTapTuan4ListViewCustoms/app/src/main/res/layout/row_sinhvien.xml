@@ -7,7 +7,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"/>
     <TextView
-        android:textColor="#FF0B0B"
+        android:textColor="#769DFF"
         android:textStyle="bold"
         android:layout_marginTop="20dp"
         android:textSize="24sp"

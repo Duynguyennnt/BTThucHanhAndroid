@@ -2,36 +2,37 @@ package com.example.baitaptuan4listviewcustoms;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
-import java.util.ArrayList;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    ListView lvsinhvien;
-    ArrayList<sinhVien> arraySinhVien;
-    sinhVienAdapter adapter;
+    private Button btListview;
+    private EditText user;
+    private EditText pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        anhXa();
-        adapter = new sinhVienAdapter(this,R.layout.row_sinhvien, arraySinhVien);
-        lvsinhvien.setAdapter(adapter);
-    }
-    private void anhXa(){
-        lvsinhvien = (ListView) findViewById(R.id.listviewsv);
-        arraySinhVien = new ArrayList<>();
-        arraySinhVien.add(new sinhVien("Nguyễn Thanh Duy","1811505310411","18T4",R.drawable.chandung1));
-        arraySinhVien.add(new sinhVien("Nguyễn Hoàng Lãnh","1811505310410","18T4",R.drawable.chandung2));
-        arraySinhVien.add(new sinhVien("Trương Minh Đạt","1811505310421","18T4",R.drawable.chandung3));
-        arraySinhVien.add(new sinhVien("Võ Nguyễn Hoàng Minh","1811505310414","18T4",R.drawable.chandung4));
-        arraySinhVien.add(new sinhVien("Võ Nữ Oanh","1811505310415","18T4",R.drawable.chandung5));
-        arraySinhVien.add(new sinhVien("Cò Thị Bé","1811505310416","18T4",R.drawable.chandung6));
-        arraySinhVien.add(new sinhVien("Tôn Nữ Trà Ngư","1811505310417","18T4",R.drawable.chandung7));
-        arraySinhVien.add(new sinhVien("Bùi Công Đức","1811505310418","18T4",R.drawable.chandung8));
-        arraySinhVien.add(new sinhVien("Trần Thị Như Ý","1811505310419","18T4",R.drawable.chandung9));
+        btListview = (Button) findViewById(R.id.loginbt);
+        user = (EditText) findViewById(R.id.editTextTextPersonName);
+        pass = (EditText) findViewById(R.id.editTextNumberPassword);
+        btListview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (user.getText().toString().equalsIgnoreCase("ThanhDuy") && pass.getText().toString().equalsIgnoreCase("123")){
+                    Intent intent = new Intent(MainActivity.this, MainActivitySinhVien.class);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(MainActivity.this,"tài khoản hoặc mật khẩu không đúng",Toast.LENGTH_LONG).show();
+                }
 
+
+
+            }
+        });
     }
 }
