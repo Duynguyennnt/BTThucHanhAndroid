@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_weight="3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="SignUp Form"
+                    android:textSize="55sp" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="6"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <RelativeLayout
+                android:layout_marginRight="50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <!--                <TextView-->
+                <!--                    android:layout_marginLeft="35dp"-->
+                <!--                    android:layout_marginTop="-55dp"-->
+                <!--                    android:layout_below="@+id/editTextTextEmailAddresssignup"-->
+                <!--                    android:text="User"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"/>-->
+                <EditText
+                    android:hint="UserName..."
+                    android:layout_marginTop="20dp"
+                    android:drawableLeft="@drawable/ic_user"
+                    android:id="@+id/editTextTextEmailAddresssignup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textEmailAddress" />
+
+                <EditText
+                    android:hint="Password..."
+                    android:drawableLeft="@drawable/ic_pass"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/editTextTextEmailAddresssignup"
+                    android:id="@+id/editTextTextPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword" />
+                <EditText
+                    android:hint="Confirm..."
+                    android:drawableLeft="@drawable/ic_pass"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/editTextTextPassword"
+                    android:id="@+id/editTextTextPasswordagain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPassword" />
+                <Button
+                    android:id="@+id/btnsignup"
+                    android:text="Đăng Kí"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/editTextTextPasswordagain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:background="#00FFFFFF"
+                    android:id="@+id/btnloginsignup"
+                    android:text="Đăng Nhập"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/btnsignup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
