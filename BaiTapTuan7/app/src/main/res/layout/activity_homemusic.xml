@@ -4,26 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".homemusic">
+    tools:context=".homemusic"
+    android:background="@drawable/nenphatnhac">
+
     <TextView
         android:id="@+id/titleten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
         android:padding="7dp"
-        android:textSize="24dp"
         android:text="Tên bài hát"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textSize="24dp" />
 
     <ImageButton
+        android:id="@+id/btnnext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="50dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="35dp"
         android:background="@null"
         android:src="@drawable/next" />
 
     <ImageButton
+        android:id="@+id/btnstop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -31,11 +38,12 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="206dp"
         android:layout_marginEnd="133dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="70dp"
         android:background="@null"
-        android:src="@drawable/pausemusic" />
+        android:src="@drawable/stopmusic" />
 
     <ImageButton
+        android:id="@+id/btnplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -43,49 +51,60 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="127dp"
         android:layout_marginEnd="212dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="70dp"
         android:background="@null"
-        android:src="@drawable/playmusic" />
+        android:src="@drawable/pausemusic" />
 
     <ImageButton
-
+        android:id="@+id/btnprev"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="70dp"
         android:background="@null"
         android:src="@drawable/rewindmusic" />
 
     <SeekBar
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:id="@+id/sbtime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="154dp" />
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="165dp" />
 
     <TextView
+        android:id="@+id/timestart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="9dp"
-        android:layout_marginBottom="177dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="187dp"
         android:text="00:00"
         android:textColor="#EA3E3E" />
 
     <TextView
+        android:id="@+id/timeend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="371dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="177dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="187dp"
         android:text="00:00"
         android:textColor="#EA3E3E" />
+
+    <ImageView
+        android:id="@+id/imageViewroteta"
+        android:layout_width="292dp"
+        android:layout_height="244dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="61dp"
+        android:layout_marginTop="198dp"
+        app:srcCompat="@drawable/cd" />
 </RelativeLayout>

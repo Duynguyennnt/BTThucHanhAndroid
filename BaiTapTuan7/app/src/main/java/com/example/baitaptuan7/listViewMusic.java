@@ -26,6 +26,8 @@ public class listViewMusic extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(listViewMusic.this, homemusic.class);
+                intent.putExtra("vitri",i);
+//                intent.putExtra("tennhac",arrayList.get(i).getFile());
                 startActivity(intent);
             }
         });
@@ -33,11 +35,11 @@ public class listViewMusic extends AppCompatActivity {
     private void anhxa(){
         lvmusic =(ListView) findViewById(R.id.lvmusicview);
         arrayList = new ArrayList<>();
-        arrayList.add(new music("Hoa Hải Đường", "Jack",R.drawable.hoahaiduong));
-        arrayList.add(new music("Là 1 Thằng Con Trai", "Jack",R.drawable.la1thangcontrai));
-        arrayList.add(new music("Em Gì Ơi", "Jack",R.drawable.emgioi));
-        arrayList.add(new music("Bạc Phận", "Jack",R.drawable.bacphan));
-        arrayList.add(new music("Đường Quyền Tình Yêu", "Jack",R.drawable.duongquyentinhyeu));
+        arrayList.add(new music("Hoa Hải Đường", "Jack",R.drawable.hoahaiduong,R.raw.hoa_hai_duong));
+        arrayList.add(new music("Là 1 Thằng Con Trai", "Jack",R.drawable.la1thangcontrai,R.raw.la_mot_thang_con_trai));
+        arrayList.add(new music("Em Gì Ơi", "Jack",R.drawable.emgioi,R.raw.em_gi_oi));
+        arrayList.add(new music("Bạc Phận", "Jack",R.drawable.bacphan,R.raw.bac_phan));
+        arrayList.add(new music("Đường Quyền Tình Yêu", "Jack",R.drawable.duongquyentinhyeu,R.raw.duong_quyen_tinh_yeu));
 
     }
 }

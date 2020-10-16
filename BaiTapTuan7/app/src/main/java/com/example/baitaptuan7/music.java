@@ -3,12 +3,13 @@ package com.example.baitaptuan7;
 public class music {
     private String ten;
     private String casi;
-    private int anh;
+    private int anh, file;
 
-    public music(String ten, String casi, int anh) {
+    public music(String ten, String casi, int anh, int file) {
         this.ten = ten;
         this.casi = casi;
         this.anh = anh;
+        this.file = file;
     }
 
     public String getTen() {
@@ -33,5 +34,13 @@ public class music {
 
     public void setAnh(int anh) {
         this.anh = anh;
+    }
+
+    public int getFile() {
+        return file;
+    }
+
+    public void setFile(int file) {
+        this.file = file;
     }
 }
