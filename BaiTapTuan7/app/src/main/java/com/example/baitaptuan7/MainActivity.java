@@ -8,10 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnlogin, btnsignup;
     private EditText ed_userM, ed_passM;
+    private String ed_userMf, ed_passMf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,8 +23,14 @@ public class MainActivity extends AppCompatActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, listViewMusic.class);
-                startActivity(intent);
+                if (ed_userM.getText().toString().equalsIgnoreCase(ed_userMf) && ed_passM.getText().toString().equalsIgnoreCase(ed_passMf)){
+                    Intent intent = new Intent(MainActivity.this, listViewMusic.class);
+                    startActivity(intent);
+                    Toast.makeText(MainActivity.this,"Đăng nhập thành công",Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(MainActivity.this,"tài khoản hoặc mật khẩu không đúng",Toast.LENGTH_LONG).show();
+                }
+
             }
         });
         btnsignup.setOnClickListener(new View.OnClickListener() {
@@ -45,5 +53,7 @@ public class MainActivity extends AppCompatActivity {
         String pass = intent.getStringExtra("pass");
         ed_userM.setText(user);
         ed_passM.setText(pass);
+        ed_userMf = user;
+        ed_passMf = pass;
     }
 }

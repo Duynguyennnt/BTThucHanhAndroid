@@ -19,12 +19,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="Login Form"
-                    android:textSize="55sp" />
+                <ImageView
+                    android:src="@drawable/logologinmain"
+                    android:layout_width="220dp"
+                    android:layout_height="120dp"
+                    android:layout_centerInParent="true"/>                   />
             </RelativeLayout>
         </LinearLayout>
         <LinearLayout
@@ -92,7 +91,7 @@
                 <Button
                     android:textSize="16sp"
                     android:textColor="#000000"
-                    android:backgroundTint="#8FB5E8FF"
+                    android:backgroundTint="#8F9DE1FF"
                     android:background="@drawable/radius_button"
                     android:id="@+id/btnlogin"
                     android:text="Login"
@@ -116,8 +115,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <LinearLayout
+                        android:backgroundTint="#8F9DE1FF"
                         android:layout_marginRight="10dp"
-                        android:background="#1E79D3FB"
+                        android:background="@drawable/button_radius_min"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent">
@@ -134,8 +134,9 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:backgroundTint="#8F9DE1FF"
                         android:layout_marginLeft="10dp"
-                        android:background="#1E79D3FB"
+                        android:background="@drawable/button_radius_min"
                         android:layout_weight="1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent">

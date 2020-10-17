@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class acivitysignup extends AppCompatActivity {
     private Button btnsignup, btnlogin;
     private EditText ed_username, ed_password, ed_passwordagain;
     private String ten, mk;
+    private ImageButton btnprevlistmusic, btnhome;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,25 @@ public class acivitysignup extends AppCompatActivity {
                 }
             }
         });
+        btnprevlistmusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(acivitysignup.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),acivitysignup.class);
+                startActivity(intent);
+                //vo lại
+                Intent start = new Intent(Intent.ACTION_MAIN);
+                start.addCategory(Intent.CATEGORY_HOME);
+                startActivity(start);
+                finish();
+            }
+        });
     }
     private void anhxa(){
         btnlogin = (Button) findViewById(R.id.btnloginsignup);
@@ -50,5 +71,7 @@ public class acivitysignup extends AppCompatActivity {
         ed_username = (EditText) findViewById(R.id.editTextTextEmailAddresssignup);
         ed_password = (EditText) findViewById(R.id.editTextTextPassword);
         ed_passwordagain = (EditText) findViewById(R.id.editTextTextPasswordagain);
+        btnprevlistmusic = (ImageButton) findViewById(R.id.btnbtnprevsignup);
+        btnhome = (ImageButton) findViewById(R.id.outsignup);
     }
 }

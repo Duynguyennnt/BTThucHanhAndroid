@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class homemusic extends AppCompatActivity {
     TextView txtstat, txttimeend, txttitle;
     SeekBar sksong;
-    ImageButton btnPrev, btnplay, btnstop, btnNext;
+    ImageButton btnPrev, btnplay, btnstop, btnNext, btnprevlistmusic, btnhome;
     ArrayList<listmusic> arrayListmusicplay;
     String tennhac, vitri;
     MediaPlayer mediaPlayer;
@@ -102,7 +102,26 @@ public class homemusic extends AppCompatActivity {
                 mediaPlayer.seekTo(sksong.getProgress());
             }
         });
+        btnprevlistmusic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(homemusic.this, listViewMusic.class);
+                startActivity(intent);
+            }
+        });
         updatetime();
+        btnhome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),homemusic.class);
+                startActivity(intent);
+                //vo lại
+                Intent start = new Intent(Intent.ACTION_MAIN);
+                start.addCategory(Intent.CATEGORY_HOME);
+                startActivity(start);
+                finish();
+            }
+        });
     }
 
     private void anhxa(){
@@ -114,6 +133,8 @@ public class homemusic extends AppCompatActivity {
         btnPrev = (ImageButton) findViewById(R.id.btnprev);
         btnplay = (ImageButton) findViewById(R.id.btnplay);
         btnstop = (ImageButton) findViewById(R.id.btnstop);
+        btnprevlistmusic = (ImageButton) findViewById(R.id.prevlistmusic);
+        btnhome = (ImageButton) findViewById(R.id.outhomemuisic);
         imgrotate = (ImageView) findViewById(R.id.imageViewroteta);
     }
 

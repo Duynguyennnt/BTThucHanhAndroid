@@ -7,14 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class listViewMusic extends AppCompatActivity {
     ListView lvmusic;
+    CircleImageView hinh;
     ArrayList<music> arrayList;
     musicAdapter adapter;
+    ImageButton imageButtonnext, imageButtonprev, imageButtonout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +36,37 @@ public class listViewMusic extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        hinh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(listViewMusic.this, profile.class);
+                startActivity(intent);
+            }
+        });
+        imageButtonnext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(listViewMusic.this, profile.class);
+                startActivity(intent);
+            }
+        });
+        imageButtonout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), listViewMusic.class);
+                startActivity(intent);
+                // su kien ket thuc app
+                Intent start = new Intent(Intent.ACTION_MAIN);
+                start.addCategory(Intent.CATEGORY_HOME);
+                startActivity(start);
+                finish();
+            }
+        });
     }
     private void anhxa(){
+        imageButtonout = (ImageButton) findViewById(R.id.out);
+        imageButtonnext = (ImageButton) findViewById(R.id.nexprofile);
+        hinh = (CircleImageView) findViewById(R.id.hinh4);
         lvmusic =(ListView) findViewById(R.id.lvmusicview);
         arrayList = new ArrayList<>();
         arrayList.add(new music("Hoa Hải Đường", "Jack",R.drawable.hoahaiduong,R.raw.hoa_hai_duong));
