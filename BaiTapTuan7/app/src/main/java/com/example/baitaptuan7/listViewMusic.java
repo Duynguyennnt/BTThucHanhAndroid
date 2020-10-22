@@ -74,6 +74,5 @@ public class listViewMusic extends AppCompatActivity {
         arrayList.add(new music("Em Gì Ơi", "Jack",R.drawable.emgioi,R.raw.em_gi_oi));
         arrayList.add(new music("Bạc Phận", "Jack",R.drawable.bacphan,R.raw.bac_phan));
         arrayList.add(new music("Đường Quyền Tình Yêu", "Jack",R.drawable.duongquyentinhyeu,R.raw.duong_quyen_tinh_yeu));
-
     }
 }
