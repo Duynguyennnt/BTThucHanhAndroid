@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        app:showAsAction="always"
+        android:icon="@drawable/ic_add"
+        android:id="@+id/add"
+        android:title="thêm">
+
+    </item>
+
+    <item android:title="sửa"
+        android:id="@+id/repair">
+
+    </item>
+    <item
+        app:showAsAction="always"
+        android:icon="@drawable/ic_delete"
+        android:title="xóa"
+        android:id="@+id/delete">
+
+    </item>
+</menu>

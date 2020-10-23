@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView
+        android:layout_margin="10dp"
+        android:id="@+id/chandung"
+        android:layout_width="120dp"
+        android:layout_height="120dp"/>
+    <TextView
+        android:textColor="#769DFF"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"
+        android:id="@+id/ten"
+        android:layout_toRightOf="@+id/chandung"
+        android:text="Ten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginTop="10dp"
+        android:textSize="22dp"
+        android:id="@+id/msv"
+        android:layout_below="@+id/ten"
+        android:layout_toRightOf="@+id/chandung"
+        android:text="Ma sinh vien"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/lop"
+        android:textSize="22dp"
+        android:text="Lop"
+        android:layout_marginTop="10px"
+        android:layout_below="@id/msv"
+        android:layout_toRightOf="@id/chandung"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
