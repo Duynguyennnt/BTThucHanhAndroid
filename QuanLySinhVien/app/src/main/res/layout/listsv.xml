@@ -3,16 +3,45 @@
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:id="@+id/txtlop"
         android:gravity="center"
         android:text="Java"
         android:background="@drawable/rotate"
         android:layout_width="100dp"
         android:layout_height="100dp"/>
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="100dp">
         <TextView
+            android:id="@+id/txtten"
+            android:text="Tên Sinh Viên"
             android:layout_width="match_parent"
             android:layout_height="40dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/imggt"
+                android:src="@drawable/ic_person"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/txtemail"
+                    android:text="Mã Sinh Viên"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"/>
+                <TextView
+                    android:id="@+id/txtsdt"
+                    android:text="Lớp"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"/>
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
