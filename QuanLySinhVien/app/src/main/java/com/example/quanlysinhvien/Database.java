@@ -23,7 +23,7 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL(String.format("CREATE TABLE %s(%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT,%s TEXT,%s TEXT,%s TEXT, "
+        sqLiteDatabase.execSQL(String.format("CREATE TABLE %s(%s INTEGER PRIMARY KEY AUTOINCREMENT, %s TEXT, %s TEXT,%s TEXT,%s TEXT,%s TEXT)"
                 ,TABLE_NAME,COLUMN_ID,COLUMN_NAME,COLUMN_GT,COLUMN_SDT,COLUMN_EMAIL,COLUMN_LOP));
     }
 

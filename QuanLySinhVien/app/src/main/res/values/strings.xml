@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">QuanLySinhVien</string>
+    <array name="lop">
+        <item>C++</item>
+        <item>Android</item>
+        <item>PHP</item>
+        <item>C#</item>
+    </array>
 </resources>

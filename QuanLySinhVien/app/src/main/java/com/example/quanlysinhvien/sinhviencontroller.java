@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class sinhviencontroller {
     Database database;
     SQLiteDatabase sqLiteDatabase;
+//    String array[] = new String[]{database.COLUMN_ID,database.COLUMN_NAME,database.COLUMN_EMAIL,database.COLUMN_GT,database.COLUMN_LOP,database.COLUMN_SDT};
 
     public sinhviencontroller(Context context){
         database = new Database(context);
@@ -52,7 +53,7 @@ public class sinhviencontroller {
     }
     // select data sv
     public ArrayList<sinhvien> getsv(){
-        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM"+ database.TABLE_NAME +";", null);
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM "+ database.TABLE_NAME +";", null);
         ArrayList<sinhvien> arrayList = new ArrayList<>();
         while (cursor.moveToNext()){
             sinhvien sv1 = new sinhvien();
