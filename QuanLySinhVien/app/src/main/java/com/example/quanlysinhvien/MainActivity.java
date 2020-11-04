@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -24,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     sinhviencontroller sinhviencontroller;
     Dialog dialog;
     viewDialog viewDialog;
+    Boolean them = true, sua= false, xoa = false;
+    sinhvien sv;
+    int j;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,18 +59,44 @@ public class MainActivity extends AppCompatActivity {
             case R.id.tc:
                 break;
             case R.id.dkm:
+                them= true;
+                sua = false;
+                xoa = false;
+                viewDialog.setbtn();
+                listViewsv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                    }
+                });
                 dialog.show();
                 break;
             case R.id.dkl:
+                them= false;
+                sua = true;
+                xoa = true;
+                viewDialog.setbtn();
+                Toast.makeText(MainActivity.this,"Chọn Sinh Viên Cần Sửa",Toast.LENGTH_SHORT).show();
+                listViewsv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        sv = sinhvienAdapter.getItem(i);
+                        j=i;
+                        viewDialog.settt(sv);
+                        dialog.show();
+                    }
+                });
                 break;
             case R.id.ttsv:
+
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
+
     class viewDialog{
         EditText editten, editsdt, editemail;
-        Button btnngaysinh, btnthem;
+        Button btnngaysinh, btnthem, btnsua, btnxoa;
         Spinner splop;
         String lop, gt= "Nu";
 //        int ngay,thang,nam;
@@ -81,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
 
             btnngaysinh = (Button) dl.findViewById(R.id.btnngaysinh);
             btnthem = (Button) dl.findViewById(R.id.btnthem);
+            btnsua = (Button) dl.findViewById(R.id.btnsua);
+            btnxoa = (Button) dl.findViewById(R.id.btnxoa);
 
             splop = (Spinner) dl.findViewById(R.id.spinnerlp);
 //            Calendar cl= Calendar.getInstance();
@@ -90,6 +122,29 @@ public class MainActivity extends AppCompatActivity {
             gtg = (RadioGroup) dl.findViewById(R.id.radiogroup);
             setRS();
             setbtnadd();
+        }
+        public void setbtn(){
+            btnthem.setEnabled(them);
+            btnxoa.setEnabled(xoa);
+            btnsua.setEnabled(sua);
+        }
+        public void settt(sinhvien sv){
+            editten.setText(sv.getTen());
+            editemail.setText(sv.getEmail());
+            editsdt.setText(sv.getSodt());
+            if (sv.getGioitinh().equals("Nu")){
+                gtg.check(R.id.rbnu);
+            }else {
+                gtg.check(R.id.rbnam);
+            }
+            int content = 0;
+            for (int i=0; i<getResources().getStringArray(R.array.lop).length;i++){
+                if (sv.getLophoc().equals(getResources().getStringArray(R.array.lop)[i])){
+                    content = i;
+                    break;
+                }
+            }
+            splop.setSelection(content);
         }
         private void setbtnadd(){
             btnthem.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +164,35 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
+            btnsua.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (gtg.getCheckedRadioButtonId()== R.id.rbnam){
+                        gt = "Nam";
+                    }else {
+                        gt = "Nu";
+                    }
+                    sinhvien s = getsv();
+                    s.setId(sv.getId());
+                    sinhvienlist.getsv().arrayListsv.set(j,s);
+                    sinhviencontroller.open();
+                    sinhviencontroller.updatesv(s);
+                    sinhviencontroller.close();
+                    sinhvienAdapter.notifyDataSetChanged();
+                    dialog.dismiss();
+                }
+            });
+             btnxoa.setOnClickListener(new View.OnClickListener() {
+                 @Override
+                 public void onClick(View view) {
+                     sinhvienlist.getsv().arrayListsv.remove(j);
+                     sinhviencontroller.open();
+                     sinhviencontroller.deletesv(sinhvienlist.getsv().arrayListsv.get(j).getId());
+                     sinhviencontroller.close();
+                     sinhvienAdapter.notifyDataSetChanged();
+                     dialog.dismiss();
+                 }
+             });
 
         }
         private void setRS(){
